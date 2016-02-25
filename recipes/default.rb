@@ -9,11 +9,11 @@ node.set[:announce][:rsyslogserver] = true
 node.save
 
 execute 'rsyslogrepo'  do
-  command "sudo add-apt-repository ppa:adiscon/v8-stable"
+  command "sudo add-apt-repository -y ppa:adiscon/v8-stable"
 end
 
 execute "update" do
-  command "sudo apt-get update"
+  command "sudo apt-get -y update"
 end
 
 apt_package 'rsyslog' do
